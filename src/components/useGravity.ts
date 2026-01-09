@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { useMotionValue, useSpring } from "framer-motion"
+import { useMotionValue, useSpring, useTransform } from "framer-motion"
 
 type UseGravityOptions = {
   maxRotation?: number
@@ -57,7 +57,15 @@ export function useGravity(options: UseGravityOptions = {}) {
     rawRotateY.set(0)
   }
 
+  function getLayerTransform(factor: number) {
+      return {
+            rotateX: useTransform(rotateX, (v) => v * factor),
+            rotateY: useTransform(rotateY, (v) => v * factor),
+      }
+  }
+
   return {
+    getLayerTransform,
     ref,
     motionStyle: {
       rotateX,
