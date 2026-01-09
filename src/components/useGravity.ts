@@ -33,7 +33,7 @@ export function useGravity(options: UseGravityOptions = {}) {
     rawRotateY.set(0)
   }
 
-  // helper for layers
+  // Function to compute transformed MotionValues per layer
   function getLayerTransform(depthFactor: number) {
     return {
       rotateX: useTransform(rotateX, (v) => v * depthFactor),
@@ -42,8 +42,9 @@ export function useGravity(options: UseGravityOptions = {}) {
   }
 
   return {
-    ref,    motionStyle: { rotateX, rotateY },
+    ref,
+    motionStyle: { rotateX, rotateY },
     handlers: { onMouseMove: handleMouseMove, onMouseLeave: handleMouseLeave },
-    getLayerTransform, // exported it so GravityCard can use it
+    getLayerTransform,// Exported it so GravityCard can use it
   }
 }
