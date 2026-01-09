@@ -2,44 +2,31 @@ import { GravityCard } from "./components/GravityCard"
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white flex items-center justify-center p-10">
+    <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center justify-center p-10 gap-10">
+      <h1 className="text-4xl font-bold mb-8">GravityCard Demo</h1>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <GravityCard>
-          <CardContent
-            title="Project Alpha"
-            description="Interactive UI experiment"
-          />
+        {/* Card 1 */}
+        <GravityCard maxRotation={15}>
+          <h3 className="text-xl font-bold">Project Alpha</h3>   {/* front layer */}
+          <p className="text-sm text-zinc-400">Interactive UI experiment</p> {/* middle layer */}
+          <span className="absolute bottom-2 right-2 text-zinc-500">v1.0</span> {/* back layer */}
         </GravityCard>
 
+        {/* Card 2 */}
         <GravityCard maxRotation={20}>
-          <CardContent
-            title="Gravity UI"
-            description="Physics-based hover motion"
-          />
+          <h3 className="text-xl font-bold">Gravity UI</h3>
+          <p className="text-sm text-zinc-400">Physics-based hover motion</p>
+          <span className="absolute bottom-2 right-2 text-zinc-500">v2.0</span>
         </GravityCard>
 
+        {/* Card 3 */}
         <GravityCard maxRotation={10}>
-          <CardContent
-            title="Next Idea"
-            description="Design-system ready component"
-          />
+          <h3 className="text-xl font-bold">Next Idea</h3>
+          <p className="text-sm text-zinc-400">Design-system ready component</p>
+          <span className="absolute bottom-2 right-2 text-zinc-500">v0.9</span>
         </GravityCard>
       </div>
     </main>
-  )
-}
-
-function CardContent({
-  title,
-  description,
-}: {
-  title: string
-  description: string
-}) {
-  return (
-    <div className="space-y-2">
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <p className="text-sm text-zinc-400">{description}</p>
-    </div>
   )
 }
