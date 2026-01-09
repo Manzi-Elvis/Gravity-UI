@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# Gravity UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Physics-based 3D hover interactions for modern React applications.**
 
-Currently, two official plugins are available:
+Gravity UI is a React + TypeScript UI experiment that explores **depth, motion, and realism** through interactive 3D hover cards.  
+Built with a strong focus on **architecture, performance, and clean abstractions**, not just flashy animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Think: *Stripe-level motion, Apple-like subtlety, developer-friendly code.*
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Preview (Conceptual)
 
-## Expanding the ESLint configuration
+┌─────────────────────────┐
+│ Project Card │
+│ │
+│ • Tilts with cursor │ ← Mouse movement controls rotation
+│ • Lifts on hover │
+│ • Smooth spring back │
+│ │
+└─────────────────────────┘
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+When you move your mouse:
+- the card **tilts toward the cursor**
+- subtle **depth and elevation** appear
+- motion feels **physical, not scripted**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+##  Core Ideas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Gravity UI is built around three principles:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 1. Motion should feel physical
+Animations are driven by **continuous input** (mouse position), not hardcoded keyframes.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 2. Abstractions over hacks
+Each animation lives inside a **reusable, typed component**, not inline spaghetti logic.
+
+### 3. Performance first
+No layout thrashing, no unnecessary re-renders — only transform-based animation.
+
+---
+
+### Motion Flow
+
+1. Capture mouse position relative to the card  
+2. Normalize values around the center  
+3. Convert them into rotation angles  
+4. Animate using spring-based physics  
+5. Reset smoothly on mouse leave  
+
+No magic. Just math + motion.
+
+---
+
+##  Tech Stack
+
+- **React**
+- **TypeScript**
+- **Framer Motion** – physics-based animation
+- **Tailwind CSS** – styling & depth
+- **Vite / Next.js** – fast dev experience
+
+---
+
+## Getting Started
+
+```bash
+git clone https://github.com/your-username/gravity-ui.git
+cd gravity-ui
+npm install
+npm run dev
