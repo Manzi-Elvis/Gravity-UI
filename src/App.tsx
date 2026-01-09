@@ -10,21 +10,21 @@ export default function App() {
         <GravityCard maxRotation={15}>
           <h3 className="text-xl font-bold">Project Alpha</h3>   {/* front layer */}
           <p className="text-sm text-zinc-400">Interactive UI experiment</p> {/* middle layer */}
-          <span className="absolute bottom-2 right-2 text-zinc-500">v1.0</span> {/* back layer */}
+          <span className="absolute bottom-2 right-2 text-zinc-500">v1</span> {/* back layer */}
         </GravityCard>
 
         {/* Card 2 */}
         <GravityCard maxRotation={20}>
           <h3 className="text-xl font-bold">Gravity UI</h3>
           <p className="text-sm text-zinc-400">Physics-based hover motion</p>
-          <span className="absolute bottom-2 right-2 text-zinc-500">v2.0</span>
+          <span className="absolute bottom-2 right-2 text-zinc-500">v2</span>
         </GravityCard>
 
         {/* Card 3 */}
         <GravityCard maxRotation={10}>
           <h3 className="text-xl font-bold">Next Idea</h3>
           <p className="text-sm text-zinc-400">Design-system ready component</p>
-          <span className="absolute bottom-2 right-2 text-zinc-500">v0.9</span>
+          <span className="absolute bottom-2 right-2 text-zinc-500">v3</span>
         </GravityCard>
       </div>
     </main>
