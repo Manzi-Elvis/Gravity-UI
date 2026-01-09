@@ -9,18 +9,6 @@ Built with a strong focus on **architecture, performance, and clean abstractions
 
 ---
 
-##  Preview (Conceptual)
-
-┌─────────────────────────┐
-│ Project Card │
-│ │
-│ • Tilts with cursor │ ← Mouse movement controls rotation
-│ • Lifts on hover │
-│ • Smooth spring back │
-│ │
-└─────────────────────────┘
-
-
 When you move your mouse:
 - the card **tilts toward the cursor**
 - subtle **depth and elevation** appear
